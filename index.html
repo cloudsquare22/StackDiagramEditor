@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Stack Diagram Editor</title>
+<style>
+    #canvas {
+        margin: 0px;
+        padding: 0px;
+        background: #c0c0c0;
+        border: thin inset #000000;
+     }
+</style>
+<link type="text/css" rel="stylesheet" media="screen" href="./stackdiagram.css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script></head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/min/jcanvas.min.js"></script>
+<script type="text/javascript" src="./jcanvas_drawjson.js"></script>
+<script type="text/javascript" src="./stackdiagram.js"></script>
+</head>
+<body>
+    <a id="download" href="#" download="stackdiagram.jpg">Download</a><br />
+    <canvas id="canvas" width="800" height="800"></canvas>
+    <div id="nodisplay">
+        <div id="menu01" class="menu-div">
+            <ul class="menu-ul">
+<!--
+                <li id="menuitemAddNorth" class="menu-li">追加－上</li>
+                <li id="menuitemAddEast" class="menu-li">追加－右</li>
+                <li id="menuitemAddSouth" class="menu-li">追加－下</li>
+                <li id="menuitemAddWest" class="menu-li">追加－左</li>
+-->
+                <li id="menuitemJoinNorth" class="menu-li">結合－上</li>
+                <li id="menuitemJoinEast" class="menu-li">結合－右</li>
+                <li id="menuitemJoinSouth" class="menu-li">結合－下</li>
+                <li id="menuitemJoinWest" class="menu-li">結合－左</li>
+                <li id="menuitemUnJoinNorth" class="menu-li">結合解除－上</li>
+                <li id="menuitemUnJoinEast" class="menu-li">結合解除－右</li>
+                <li id="menuitemUnJoinSouth" class="menu-li">結合解除－下</li>
+                <li id="menuitemUnJoinWest" class="menu-li">結合解除－左</li>
+                <li id="menuitemDel" class="menu-li">削除</li>
+                <li id="menuitemEditText" class="menu-li">テキスト編集</li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+    stackDiagramInit();
+
+    </script>
+</body>
+</html>

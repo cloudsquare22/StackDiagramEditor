@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+div.foot {
+    display: none !important;
+}
+
+/* 全体設定 */
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* マップ表示エリア設定 */
+#canvas {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 非表示部 */
+#nodisplay {
+    margin: 0px;
+    padding: 0px;
+    height: 0px;
+}
+
+/* ポップアップテキスト設定 */
+/* #popup 枠設定 */
+/* #popuptext 文字設定 */
+#popup {
+    background-color: #f7ecb5;
+}
+
+#popuptext {
+    margin: 3px;
+    padding: 0px;
+}
+
+/* 右クリックメニュー設定 */
+/* .menu-div メニュー大枠設定 */
+/* .menu-ul メニュー中枠設定 */
+/* .menu-li:hover メニューマウスオーバー時設定 */
+/* .menu-line メニュー中枠間線設定 */
+/* 例
+   menu-div
+     menu-ul(内menu-li:hover)
+     menu-line
+     menu-ul(内menu-li:hover)
+*/
+.menu-div {
+    position: absolute;
+    visibility:hidden;
+    background-color:#ffffff;
+    border: 1px solid black;
+}
+
+.menu-ul {
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    list-style: none;
+}
+
+.menu-li {
+    padding:5px 5px 5px 5px;
+    border: 1px solid black;
+}
+
+.menu-li:hover {
+    background-color:chartreuse;
+}
+
+.menu-line {
+    height:0px;
+    margin:0 0 1px 0;
+    border-color:#cccccc;
+    border-style:solid;
+    border-width:0 0 1px 0;
+    padding:0 0 1px 0;
+}
