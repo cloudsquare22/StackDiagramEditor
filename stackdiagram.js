@@ -447,3 +447,12 @@ function drawPlusIcon(element) {
     }
 
 }
+
+function resizeCanvas() {
+    console.log('resizeCanvas()')
+    console.log($('#canvas_width').val())
+    console.log($('#canvas_height').val())
+    $('#canvas').attr("width", $('#canvas_width').val())
+    $('#canvas').attr("height", $('#canvas_height').val())
+    $('#canvas').drawLayers();
+}

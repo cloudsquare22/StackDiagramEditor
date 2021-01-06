@@ -19,6 +19,12 @@
 </head>
 <body>
     <a id="download" href="#" download="stackdiagram.jpg">Download</a><br />
+    <br />
+    <label>Canvas Width : </label><input type="number" id="canvas_width" value ="800">
+    <label>Height : </label><input type="number" id="canvas_height" value ="800">
+    <input type="button" value="変更" onclick="resizeCanvas()">
+    <br />
+    <br />
     <canvas id="canvas" width="800" height="800"></canvas>
     <div id="nodisplay">
         <div id="menu01" class="menu-div">
