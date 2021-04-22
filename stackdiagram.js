@@ -329,27 +329,35 @@ function removeElement() {
 
     // 追加Element周辺Element「＋」制御
     var idNorth = createElementID(positionX, positionY + 1);
-    element = $('#canvas').getLayer(idNorth)
+    element = $('#canvas').getLayer(idNorth);
     if(element != undefined) {
-        drawPlusIcon(element)
+        drawPlusIcon(element);
+        element.data.join.south = false;
+        drawStroke(element);
         $('#canvas').drawLayers();
     }
     var idEast = createElementID(positionX + 1, positionY);
-    element = $('#canvas').getLayer(idEast)
+    element = $('#canvas').getLayer(idEast);
     if($('#canvas').getLayer(idEast) != undefined) {
-        drawPlusIcon(element)
+        drawPlusIcon(element);
+        element.data.join.west = false;
+        drawStroke(element);
         $('#canvas').drawLayers();
     }
     var idSouth = createElementID(positionX, positionY - 1);
-    element = $('#canvas').getLayer(idSouth)
+    element = $('#canvas').getLayer(idSouth);
     if($('#canvas').getLayer(idSouth) != undefined) {
-        drawPlusIcon(element)
+        drawPlusIcon(element);
+        element.data.join.north = false;
+        drawStroke(element);
         $('#canvas').drawLayers();
     }
     var idWest = createElementID(positionX - 1, positionY);
-    element = $('#canvas').getLayer(idWest)
+    element = $('#canvas').getLayer(idWest);
     if($('#canvas').getLayer(idWest) != undefined) {
-        drawPlusIcon(element)
+        drawPlusIcon(element);
+        element.data.join.east = false;
+        drawStroke(element);
         $('#canvas').drawLayers();
     }
 }
