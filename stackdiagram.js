@@ -24,6 +24,15 @@ function stackDiagramInit() {
     contextMenuInit();
 }
 
+function clearCanvas() {
+    var layers = $('#canvas').getLayers();    
+    console.log(layers)
+    $('#canvas').removeLayers();
+    console.log(layers)
+    stackElements = {};
+    stackDiagramInit();
+}
+
 function contextMenuInit() {
     // $('#menuitemAddNorth').on('click', function() {
     //     console.log('追加－上');
