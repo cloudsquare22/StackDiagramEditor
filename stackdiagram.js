@@ -116,6 +116,7 @@ function contextMenuInit() {
         if(targetElement.name != createElementID(0, 0)) { // 開始マスは削除させない。
             $('#canvas').removeLayerGroup(targetElement.groups[0])
             $('#canvas').drawLayers();
+            removeElement()
             delete stackElements[targetElement.name];
             console.log(stackElements);
         }
@@ -316,6 +317,40 @@ function addElement(direction) {
             stackElements[id] = element;
             console.log(stackElements);
         }        
+    }
+}
+
+function removeElement() {
+    console.log("removeElement")
+    console.log(targetElement)
+    var positionX = targetElement.data.x;
+    var positionY = targetElement.data.y;
+    var element = undefined
+
+    // 追加Element周辺Element「＋」制御
+    var idNorth = createElementID(positionX, positionY + 1);
+    element = $('#canvas').getLayer(idNorth)
+    if(element != undefined) {
+        drawPlusIcon(element)
+        $('#canvas').drawLayers();
+    }
+    var idEast = createElementID(positionX + 1, positionY);
+    element = $('#canvas').getLayer(idEast)
+    if($('#canvas').getLayer(idEast) != undefined) {
+        drawPlusIcon(element)
+        $('#canvas').drawLayers();
+    }
+    var idSouth = createElementID(positionX, positionY - 1);
+    element = $('#canvas').getLayer(idSouth)
+    if($('#canvas').getLayer(idSouth) != undefined) {
+        drawPlusIcon(element)
+        $('#canvas').drawLayers();
+    }
+    var idWest = createElementID(positionX - 1, positionY);
+    element = $('#canvas').getLayer(idWest)
+    if($('#canvas').getLayer(idWest) != undefined) {
+        drawPlusIcon(element)
+        $('#canvas').drawLayers();
     }
 }
 
