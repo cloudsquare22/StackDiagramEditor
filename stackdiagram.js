@@ -150,8 +150,32 @@ function contextMenuInit() {
 
     $('#download').on('click', function() {
         console.log('Download');
+        var layers = $('#canvas').getLayers();    
+        console.log(layers);
+        for(let i = 0; i < layers.length; i++) {
+            console.log(layers[i]);
+            if(layers[i].hasOwnProperty('name') &&
+                (layers[i].name.indexOf("-plus-north") != -1 ||
+                layers[i].name.indexOf("-plus-south") != -1 ||
+                layers[i].name.indexOf("-plus-east") != -1 ||
+                layers[i].name.indexOf("-plus-west") != -1)) {
+                layers[i].opacity = 0;
+                $('#canvas').drawLayers();
+            }
+        }
         var base64 = $('canvas').getCanvasImage('jpg');
         document.getElementById("download").href = base64;
+        for(let i = 0; i < layers.length; i++) {
+            console.log(layers[i]);
+            if(layers[i].hasOwnProperty('name') &&
+                (layers[i].name.indexOf("-plus-north") != -1 ||
+                layers[i].name.indexOf("-plus-south") != -1 ||
+                layers[i].name.indexOf("-plus-east") != -1 ||
+                layers[i].name.indexOf("-plus-west") != -1)) {
+                layers[i].opacity = 1;
+                $('#canvas').drawLayers();
+            }
+        }
     });
 }
 
